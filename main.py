@@ -1,21 +1,46 @@
+# ask person questions
 print("Type in lowercase")
 question = input("Have you been in contact with anybody who has COVID19? ")
 
 
-# ask for symptoms of COVID19
+# talk about how flu and COVID19 symptoms are similar
+def talkAboutFlu():
+    print("COVID19 symptoms are similar to flu symptoms, you should also get tested for the flu.")
+
+
+# ask if a person has COVID19 symptoms
+def possiblePositiveCase():
+    pPC = open("possiblePositiveCase.txt", "r+")
+    pPC.read()
+    lines = ["\nA positive case"]
+    pPC.writelines(lines)
+    pPC.read()
+
+
+def possibleNegativeCase():
+    pNC = open("possibleNegativeCase.txt", "r+")
+    pNC.read()
+    lines = ["\nA negative case"]
+    pNC.writelines(lines)
+    pNC.read()
+
+
 def ask4Symptoms():
     symptoms = input("Have you had difficulty breathing, or had a fever? ")
     if symptoms == 'yes':
         print("Get tested or quarantine")
+        possiblePositiveCase()
         talkAboutFlu()
     elif symptoms == 'ya':
         print("Get tested or quarantine")
+        possiblePositiveCase()
         talkAboutFlu()
     else:
         print("Ok, you probably don't need to be tested")
+        possibleNegativeCase()
 
 
-# questions to determine if a person has COVID19
+# ask person question
 if question == 'yes':
     ask4Symptoms()
 elif question == 'ya':
@@ -23,10 +48,5 @@ elif question == 'ya':
 elif question == 'i dont know':
     ask4Symptoms()
 else:
-    print("Good")
     ask4Symptoms()
-
-
-# talk about flu
-def talkAboutFlu():
-    print("COVID19 symptoms are similar to flu symptoms, you should also get tested for the flu.")
+    print("Good")
