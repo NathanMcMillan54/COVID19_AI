@@ -1,3 +1,7 @@
+from datetime import date
+
+currentDate = date.today()
+
 # ask person questions
 print("Type in lowercase")
 question = input("Have you been in contact with anybody who has COVID19? ")
@@ -13,6 +17,7 @@ def possiblePositiveCase():
     pPC = open("possiblePositiveCase.txt", "r+")
     pPC.read()
     lines = ["\nA positive case"]
+    pPC.writelines(currentDate.strftime("%d/%m/%Y"))
     pPC.writelines(lines)
     pPC.read()
 
@@ -21,6 +26,7 @@ def possibleNegativeCase():
     pNC = open("possibleNegativeCase.txt", "r+")
     pNC.read()
     lines = ["\nA negative case"]
+    pNC.writelines(currentDate.strftime("%d/%m/%Y"))
     pNC.writelines(lines)
     pNC.read()
 
