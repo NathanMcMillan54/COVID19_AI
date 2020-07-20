@@ -30,4 +30,3 @@ else:
 # talk about flu
 def talkAboutFlu():
     print("COVID19 symptoms are similar to flu symptoms, you should also get tested for the flu.")
-
