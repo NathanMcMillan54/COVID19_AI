@@ -2,9 +2,24 @@ from datetime import date
 
 currentDate = date.today()
 
-# ask person questions
-print("Type in lowercase")
-question = input("Have you been in contact with anybody who has COVID19? ")
+
+def askQuestion():
+    # ask person questions
+    print("Type in lowercase")
+    question = input("Have you been in contact with anybody who has COVID19? ")
+
+    # ask person question
+    if question == 'yes':
+        ask4Symptoms()
+    elif question == 'ya':
+        ask4Symptoms()
+    elif question == 'i dont know':
+        ask4Symptoms()
+    elif question == 'no':
+        print("Good")
+    else:
+        print("Enter yes or no")
+        askQuestion()
 
 
 # talk about how flu and COVID19 symptoms are similar
@@ -46,13 +61,4 @@ def ask4Symptoms():
         possibleNegativeCase()
 
 
-# ask person question
-if question == 'yes':
-    ask4Symptoms()
-elif question == 'ya':
-    ask4Symptoms()
-elif question == 'i dont know':
-    ask4Symptoms()
-else:
-    ask4Symptoms()
-    print("Good")
+askQuestion()
