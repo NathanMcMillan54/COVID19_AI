@@ -1,4 +1,5 @@
 from datetime import date
+import os
 import cv2
 
 
@@ -40,6 +41,9 @@ def askQuestion():
         ask4Symptoms()
     elif question == 'no':
         print("Good")
+    elif question == 'check-for-&-update':
+        os.system('git pull')
+        exit()
     else:
         print("Enter yes or no")
         askQuestion()
