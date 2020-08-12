@@ -56,9 +56,12 @@ def ask4Symptoms():
         print("Get tested or quarantine")
         possiblePositiveCase()
         talkAboutFlu()
-    else:
+    elif symptoms == 'no':
         print("Ok, you probably don't need to be tested")
         possibleNegativeCase()
+    else:
+        print("Enter yes or no")
+        ask4Symptoms()
 
 
 askQuestion()
