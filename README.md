@@ -10,6 +10,8 @@ When testing in possibleNegativeCase.txt and possiblePositiveCase.txt delete any
 # Setup
 Install requirements
 
+Use Python 3.6 or higher for running this.
+
 ```shell script
 pip install -r requirements.txt
 ```
