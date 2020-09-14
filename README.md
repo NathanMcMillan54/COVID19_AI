@@ -21,3 +21,6 @@ Run COVID19_AI
 ```shell script
 python main.py
 ```
+
+## TODO
+- [ ] Get translating working
