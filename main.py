@@ -15,7 +15,7 @@ def lookForFace():
         for (x, y, w, h) in faces:
             askQuestion()
             cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        cv2.imshow('Face recognition', img)
+        cv2.imshow('Look for human face', img)
 
         k = cv2.waitKey(30) & 0xff
         if k == 27:
@@ -42,8 +42,13 @@ def askQuestion():
     elif question == 'no':
         print("Good")
     elif question == 'check-for-&-update':
-        os.system('git pull')
-        exit()
+        confirm = input("Confirm: ")
+        if confirm == "01111001 01100101 01110011":
+            os.system('git pull')
+            exit()
+        else:
+            print("Incorrect confirmation code")
+            exit()
     else:
         print("Enter yes or no")
         askQuestion()
