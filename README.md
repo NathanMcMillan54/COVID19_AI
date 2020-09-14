@@ -12,6 +12,7 @@ Install requirements
 
 Use Python 3.6 or higher for running this.
 
+
 ```shell script
 pip install -r requirements.txt
 ```
